@@ -1,0 +1,14 @@
+.counter__body{
+    background-color: bisque;
+    flex-direction: column;
+    width: auto;
+    display: block;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-between;
+    gap: 30px;
+}
