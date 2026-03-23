@@ -5,10 +5,40 @@
     display: block;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 50px;
     align-items: center;
     align-content: space-between;
+}
+
+.counters{
+    display: flex;
+    flex-direction: row;
     gap: 30px;
 }
+
+.slide {
+    inset: 0;
+    display: none;
+}
+
+.carousel{
+    background-color: darkgray;
+}
+
+.carousel img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.active {
+    display: block;
+    z-index: 3;
+}
+
