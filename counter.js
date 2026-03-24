@@ -1,23 +1,28 @@
-function counter () {
-    document.addEventListener('click', function (event) {
-            const button = event.target.closest('.button');
-            if (!button) return 0;
-            const action = button.dataset.counter;
+function CounterPrototype(element) {
+    this.root = element;
+    this.resultElement = this.root.querySelector('[data-counter="result"]');
+    this.score = parseFloat(this.resultElement.innerText);
 
-            if (action==='increment' || action==='decrement') {
-                const counter = button.closest('[data-counter="container"]');
-                const resultElement = counter.querySelector('[data-counter="result"]');
-
-                let score = parseFloat(resultElement.innerText);
-
-                action==='increment' ? score++ : score--;
-                resultElement.innerText = score;
-            }
-
-
-    })
+    document.addEventListener('click', this.init.bind(this));
 }
-counter();
+
+CounterPrototype.prototype.init = function (element) {
+    const button = element.target.closest('.button');
+    if (!button || !this.root.contains(button)) return 0;
+    this.update(button.dataset.counter);
+}
+
+CounterPrototype.prototype.update = function(action) {
+    if (action==='increment' || action==='decrement') {
+        action==='increment' ? this.score+=this.step : this.score-=this.step;
+        this.resultElement.innerText = this.score;
+    }
+}
+
+const allCounters = document.querySelectorAll('[data-counter="container"]');
+allCounters.forEach(element => {
+    new CounterPrototype(element);
+});
 
 
 
