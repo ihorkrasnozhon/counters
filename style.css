@@ -1,4 +1,4 @@
-.counter__body{
+.counter__container{
     background-color: bisque;
     flex-direction: column;
     width: auto;
@@ -41,4 +41,5 @@ body{
     display: block;
     z-index: 3;
 }
+
 

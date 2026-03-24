@@ -30,16 +30,14 @@ buttons.forEach(button => {
 
 let startX = 0;
 let endX = 0;
-document.querySelector('ul').addEventListener("touchstart", handleStart);
-document.querySelector('ul').addEventListener("touchend", handleEnd);
-document.querySelector('ul').addEventListener("mousedown", handleStart);
-document.querySelector('ul').addEventListener("mouseup", handleEnd);
+document.querySelector('ul').addEventListener("pointerdown", handleStart);
+document.querySelector('ul').addEventListener("pointerup", handleEnd);
 
 function handleStart(event) {
-    startX = event.touches ? event.touches[0].clientX : event.clientX;
+    startX = event.clientX;
 }
 function handleEnd(event) {
-    endX = event.changedTouches ? event.changedTouches[0].clientX : event.clientX;
+    endX = event.clientX;
 
     const diff = startX - endX;
     if(Math.abs(diff) > 50) {
@@ -53,38 +51,3 @@ function handleEnd(event) {
     }
 
 }
-
-
-
-
-
-let counters = document.querySelectorAll('.counter__body');
-
-counters.forEach((counter) =>
-{
-    const incButton = counter.querySelector('.increment');
-    const decButton = counter.querySelector('.decrement');
-
-
-    incButton.addEventListener('click', increment);
-    decButton.addEventListener('click', decrement);
-
-
-    let count = 1;
-
-    function updateCount() {
-        counter.querySelector('.result').innerHTML = count;
-    }
-
-    function increment() {
-        count++;
-        updateCount();
-        return 0;
-    }
-
-    function decrement() {
-        count--;
-        updateCount();
-        return 0;
-    }
-});

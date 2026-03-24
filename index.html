@@ -4,37 +4,38 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="counter.js" defer></script>
+    <script src="slider.js" defer></script>
 
 </head>
 <body>
 <section class="counters">
-    <div class="counter__body">
-        <span class="result">1</span>
+    <div class="counter__container" data-counter="container">
+        <span class="result" data-counter="result">1</span>
         <div class="buttons-container">
-            <button onclick="increment()" class="button increment">+</button>
-            <button onclick="decrement()" class="button decrement">-</button>
+            <button class="button increment" data-counter="increment">+</button>
+            <button class="button decrement" data-counter="decrement">-</button>
         </div>
     </div>
-    <div class="counter__body">
-        <span class="result">1</span>
+    <div class="counter__container" data-counter="container">
+        <span class="result" data-counter="result">1</span>
         <div class="buttons-container">
-            <button class="button increment">+</button>
-            <button class="button decrement">-</button>
+            <button class="button increment" data-counter="increment">+</button>
+            <button class="button decrement" data-counter="decrement">-</button>
         </div>
     </div>
-    <div class="counter__body">
-        <span class="result">1</span>
+    <div class="counter__container" data-counter="container">
+        <span class="result" data-counter="result">1</span>
         <div class="buttons-container">
-            <button class="button increment">+</button>
-            <button class="button decrement">-</button>
+            <button class="button increment" data-counter="increment">+</button>
+            <button class="button decrement" data-counter="decrement">-</button>
         </div>
     </div>
-    <div class="counter__body">
-        <span class="result">1</span>
+    <div class="counter__container" data-counter="container">
+        <span class="result" data-counter="result">1</span>
         <div class="buttons-container">
-            <button class="button increment">+</button>
-            <button class="button decrement">-</button>
+            <button class="button increment" data-counter="increment">+</button>
+            <button class="button decrement" data-counter="decrement">-</button>
         </div>
     </div>
 </section>
